@@ -128,12 +128,13 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
-    compileOptions {
-        def version = getJavaVersion()
-        sourceCompatibility = version
-        targetCompatibility = version
+      kotlinOptions {
+        jvmTarget = "17"  // Or "17" if you need Java 17
     }
-
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17  // Or VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17  // Or VERSION_17
+    }
     defaultConfig {
         minSdkVersion 16
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
